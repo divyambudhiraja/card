@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Page</title>
+    <nav style="background-color: aqua;">
+        <center><h1>Items</h1></center>
+    </nav>
+    <style>
+        .contain_body {
+            display: flex;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .card img {
+            width: 50px;  /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain_body">
+        <div class="card-container">
+            <div class="card" onclick="showDetails(this)">
+                <a href="https://lithub.com/the-20-best-novels-of-the-decade/">
+                <img src="https://s26162.pcdn.co/wp-content/uploads/2019/11/A1NfEjobJnL-691x1024.jpg">
+                </a>
+                <h2>Solar Bones</h2>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card" onclick="showDetails(this)">
+                <a href="https://www.canva.com/book-covers/templates/novel/">
+                <img src="https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg">
+                </a>
+                <h2>Soul</h2>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card" onclick="showDetails(this)">
+                <a href="https://en.wikipedia.org/wiki/The_Great_Indian_Novel">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/kjd6nww0-0/book/o/5/w/the-great-indian-novel-original-imafyxyfkbfut4t6.jpeg?q=20&crop=false">
+                </a>
+                <h2>The Great Indian Novel</h2>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card" onclick="showDetails(this)">
+                <a href="https://en.wikipedia.org/wiki/To_the_Lighthouse">
+                <img src="https://cdn.britannica.com/20/99420-050-A8C679CA/Dust-jacket-edition-Vanessa-Bell-Virginia-Woolf-1927.jpg">
+                </a>
+                <h2>To The Light House</h2>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card" onclick="showDetails(this)">
+                <a href="https://www.alephbookcompany.com/book/the-secret-of-more-a-novel/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFWT1Kpe8VwVHEM8DSU8K_hkgN1GX0F9vB3Q&s">
+                </a>
+                <h2>The Secret Of More</h2>
+            </div>
+        </div>
+        <div class="card" onclick="showDetails(this)">
+            <a href="https://www.goodreads.com/book/show/199261152-a-novel-love-story">
+            <img src="https://m.media-amazon.com/images/I/81xukQxH37L._AC_UF1000,1000_QL80_.jpg">
+            </a>
+            <h2>A Novel Love Story</h2>
+        </div>
+        <div class="card" onclick="showDetails(this)">
+            <a href="https://www.goodreads.com/book/show/61683285-homecoming">
+            <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1661354811l/61683285.jpg">
+            </a>
+            <h2>Homecoming</h2>
+        </div>
+        <div class="card" onclick="showDetails(this)">
+            <a href="https://www.goodreads.com/book/show/195430688-the-paris-novel">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1693835272i/195430688.jpg">
+            </a>
+            <h2>Paris Novel</h2>
+        </div>
+        <div class="card" onclick="showDetails(this)">
+            <a href="https://booksandyou.in/products/walker-stories-the-lost-treasure?srsltid=AfmBOop9mdct7OjJSDWIr9hRh8oxeLX780qRF9TofRb5dBod1LjuhxKN">
+            <img src="https://www.bookgeeks.in/wp-content/uploads/2024/03/The-Lost-Treasure-of-the-Azad-Hind-Fauj-by-Piyush-Rohankar-Latest-Indian-Novel-2024.jpg">
+            </a>
+            <h2>The Lost Treasure</h2>
+        </div>
+        <div class="card" onclick="showDetails(this)">
+            <a href="https://www.harpercollins.com/products/brooklyn-crime-novel-jonathan-lethem">
+            <img src="https://www.harvardreview.org/wp-content/uploads/2023/10/91AllZ2B5EL._AC_UF10001000_QL80_.jpg">
+            </a>
+            <h2>Brooklyn Crime Novel</h2>
+        </div>
+        <div class="card" onclick="showDetails(this)">
+            <a href="https://www.goodreads.com/book/show/18956.Homicide">
+            <img src="https://mpd-biblio-covers.imgix.net/9781250624628.jpg">
+        </a>
+            <h2>Homicide</h2>
+        </div>
+        <div class="card" onclick="showDetails(this)">
+            <a href="https://www.ucpress.edu/book/9780520394650/novel-palestine">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaTOYQRJou7E6qqnDyZH9QxVjo2OLbxqcnlw&s">
+            </a>
+            <h2>Novel Palastie</h2>
+        </div>
+        <div id="details-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">×</span>
+                <h2>Card Details</h2>
+                <p id="details-content"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showDetails(card) {
+            const content = card.querySelector('p').textContent;
+            document.getElementById('details-content').textContent = content;
+            document.getElementById('details-modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('details-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
